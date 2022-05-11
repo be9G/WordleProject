@@ -1,0 +1,24 @@
+package com.company;
+import java.util.Scanner;
+
+public class Wordle {
+    public static void main(String[] args) {
+        String guess = "";
+        Scanner input = new Scanner(System.in);
+        String[] wordleList = {"Information", "Systems", "Java", "Programming", "Wordle"};
+        String wordleWord = wordleList[(int)(Math.random() * wordleList.length)];
+        int guessesLeft = 6;
+        System.out.println("You have " + guessesLeft + " guess(es) remaining.")
+        while (guess != wordleWord && guessesLeft > 0) {
+            guess = input.nextLine();
+            if (guess.length() > 5) {
+                System.out.println("Not enough letters");
+                continue;
+            }
+            if (guess.length() < 5) {
+                System.out.println("Too many letters");
+                continue;
+            }
+        }
+    }
+}
